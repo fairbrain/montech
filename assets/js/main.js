@@ -1,5 +1,10 @@
+Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
+
+  
 $('.team-slider').slick({
-    centerMode: true,
+    centerMode: false,
     centerPadding: '60px',
     slidesToShow: 5,
     responsive: [
@@ -10,6 +15,14 @@ $('.team-slider').slick({
                 centerMode: true,
                 centerPadding: '40px',
                 slidesToShow: 3
+            }
+        },
+        ,
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
             }
         },
         {
@@ -47,7 +60,7 @@ $('.partners-slider').slick({
             breakpoint: 600,
             settings: {
                 slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToScroll: 1
             }
         },
         {
@@ -84,8 +97,8 @@ $('.project-slider').slick({
         {
             breakpoint: 600,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToShow: 1,
+                slidesToScroll: 1
             }
         },
         {
@@ -101,14 +114,24 @@ $('.project-slider').slick({
     ]
 });
 
-$(".slider-nav .arrow-right").click(
+$(".projects .slider-nav .arrow-right").click(
     () => {
-        $(".slick-next").click();
+        $(".projects .slick-next").click();
     }
 )
-$(".slider-nav .arrow-left").click(
+$(".projects .slider-nav .arrow-left").click(
     () => {
-        $(".slick-prev").click();
+        $(".projects .slick-prev").click();
+    }
+)
+$(".works .slider-nav .arrow-right").click(
+    () => {
+        $(".works .slick-next").click();
+    }
+)
+$(".works .slider-nav .arrow-left").click(
+    () => {
+        $(".works .slick-prev").click();
     }
 )
 
