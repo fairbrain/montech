@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
     font-family: "Montserrat", system-ui;
 }
 
@@ -36,20 +36,25 @@ body {
     margin: 10px;
 }
 
+.team-card-slide:hover{
+    scale: 1.1;
+}
+
 .team-card {
     width: 100%;
     height: 250px;
     background-color: whitesmoke;
 }
 
-.team-slider .slick-center {
-    scale: 1.1;
+.partner-logo{
+    text-align: center;
 }
 
 .partner-logo img {
     height: 100px;
     object-position: center;
     object-fit: contain;
+    display: inline-block;
 }
 
 .slider-nav button {
@@ -107,9 +112,10 @@ body {
     width: 80px !important;
     height: 80px !important;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 99;
 }
 
 .project-slide img:hover {
@@ -126,8 +132,8 @@ video {
 
 #playBtn {
     position: absolute;
-    width: 100px;
-    top: 50%;
+    width: 180px;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -135,7 +141,6 @@ video {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
-    background: url(../videos/Alwar\ -\ Khetri\ Mov\ Lineup\ 1.mp4);
 }
 
 
@@ -217,6 +222,16 @@ video {
     position: absolute;
     z-index: -2;
     margin-top: 15px;
+}
+
+@media(max-width: 600px){
+    .career button[type=submit]::after{
+        display: none;
+    }
+    #playBtn{
+        top: 30%;
+        left: 30%;
+    }
 }
 
 .contact {
