@@ -39,13 +39,14 @@ $('.team-slider').slick({
 
 
 $('.partners-slider').slick({
-    autoplay: true,            // Enables autoplay
-    autoplaySpeed: 3000,
+    
     dots: false,
     infinite: true,
     speed: 300,
     slidesToShow: 5,
     slidesToScroll: 1,
+    autoplay: true,            // Enables autoplay
+    autoplaySpeed: 3000,
     responsive: [
         {
             breakpoint: 1024,
