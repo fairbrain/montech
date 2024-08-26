@@ -46,7 +46,7 @@ $('.partners-slider').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,            // Enables autoplay
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     responsive: [
         {
             breakpoint: 1024,
