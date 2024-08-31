@@ -1,8 +1,8 @@
 Fancybox.bind("[data-fancybox]", {
     // Your custom options
-  });
+});
 
-  
+
 $('.team-slider').slick({
     centerMode: false,
     centerPadding: '60px',
@@ -39,14 +39,14 @@ $('.team-slider').slick({
 
 
 $('.partners-slider').slick({
-    
+
     dots: false,
     infinite: true,
     speed: 300,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
-    autoplay: true,            // Enables autoplay
-    autoplaySpeed: 2000,
+    draggable: false,           // Enables autoplay
+
     responsive: [
         {
             breakpoint: 1024,
@@ -61,14 +61,18 @@ $('.partners-slider').slick({
             breakpoint: 600,
             settings: {
                 slidesToShow: 2,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
             }
         },
         {
             breakpoint: 480,
             settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
             }
         }
         // You can unslick at a given breakpoint now by adding:
@@ -141,9 +145,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const videoPopup = document.getElementById('videoPopup');
     const closeBtn = document.getElementById('closeBtn');
     const videoPlayer = document.getElementById('videoPlayer');
+    let popupShown = false; // Flag to ensure the popup shows only once
 
     // Function to open the video popup
-    playBtn.addEventListener('click', function () {
+    function openVideoPopup() {
         videoPopup.style.display = 'flex';
 
         // Load the video source dynamically when the popup is opened
@@ -151,6 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
             videoPlayer.setAttribute('src', 'https://new.businessenquiry.co.in/montech-demo.mp4'); // Replace with your video file URL
             videoPlayer.load();
         }
+    }
+
+    // Event listener for the play button
+    playBtn.addEventListener('click', function () {
+        openVideoPopup();
     });
 
     // Function to close the video popup
@@ -159,7 +169,24 @@ document.addEventListener("DOMContentLoaded", function () {
         videoPlayer.pause();  // Pause the video when popup is closed
         videoPlayer.removeAttribute('src');  // Remove the video source
     });
+
+    // Function to show the popup when scrolling past a certain point
+    window.addEventListener("scroll", function () {
+        if (!popupShown) {
+            // Get the scroll position
+            const scrollPosition = window.scrollY;
+
+            // Define the scroll threshold (e.g., 500px)
+            const scrollThreshold = 2000;
+
+            if (scrollPosition > scrollThreshold) {
+                openVideoPopup();
+                popupShown = true; // Set the flag to true to prevent future triggers
+            }
+        }
+    });
 });
+
 
 
 
