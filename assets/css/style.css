@@ -3,6 +3,7 @@
 body {
     /* overflow-x: hidden !important; */
     font-family: "Montserrat", system-ui;
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -36,7 +37,7 @@ body {
     margin: 10px;
 }
 
-.team-card-slide:hover{
+.team-card-slide:hover {
     scale: 1.1;
 }
 
@@ -46,7 +47,7 @@ body {
     background-color: whitesmoke;
 }
 
-.partner-logo{
+.partner-logo {
     text-align: center;
 }
 
@@ -134,7 +135,7 @@ video {
     position: absolute;
     width: 180px;
     top: 40%;
-    left: 50%;
+    left: 45%;
     transform: translate(-50%, -50%);
     color: #fff;
     border: none;
@@ -147,7 +148,7 @@ video {
 
 .video-popup {
     position: fixed;
-    top: 20px;
+    top: 0px;
     left: 50%;
     width: 100%;
     height: 100%;
@@ -156,10 +157,10 @@ video {
     justify-content: center;
     align-items: center;
     transform: translateX(-50%);
+    z-index: 99999;
 }
 
 .popup-content {
-    border-radius: 20px;
     position: relative;
     width: 80%;
     max-width: 800px;
@@ -175,6 +176,7 @@ video {
     cursor: pointer;
     color: #000;
 }
+
 
 
 .career input {
@@ -203,6 +205,33 @@ video {
     border-radius: 30px;
 }
 
+.about-us h2 {
+    background-color: #E40737;
+    border: none;
+    font-size: 25px;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+}
+
+.about-us::after {
+    content: "";
+    background-color: #E40737;
+    height: 2px;
+    width: 50%;
+    display: inline-block;
+    position: absolute;
+    z-index: -2;
+    top: 25px;
+    margin-top: 15px;
+}
+
+.career button[type=submit]:hover {
+    background-color: black;
+    box-shadow: -5px 5px 0px #E40737;
+}
+
 .career button[type=submit]:hover {
     background-color: black;
     box-shadow: -5px 5px 0px #E40737;
@@ -217,18 +246,46 @@ video {
     content: "";
     background-color: #E40737;
     height: 2px;
-    width: 100%;
+    width: 80%;
     display: inline-block;
     position: absolute;
     z-index: -2;
     margin-top: 15px;
 }
 
-@media(max-width: 600px){
-    .career button[type=submit]::after{
+.get-in-touch input {
+    background-color: #fbc7d2;
+    color: rgb(247, 58, 58);
+    border-bottom: 10px;
+    width: 50%;
+}
+
+@media(max-width: 600px) {
+    header form {
+        width: 90% !important;
+        margin: 20px 0;
+    }
+
+    .get-in-touch input {
+        width: 100%;
+    }
+}
+
+
+.get-in-touch textarea {
+    border: 1px solid #eb335b56;
+}
+
+.get-in-touch input::placeholder {
+    color: rgb(247, 58, 58);
+}
+
+@media(max-width: 600px) {
+    .career button[type=submit]::after {
         display: none;
     }
-    #playBtn{
+
+    #playBtn {
         top: 30%;
         left: 30%;
     }
