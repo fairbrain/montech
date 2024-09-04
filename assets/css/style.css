@@ -280,17 +280,7 @@ video {
     color: rgb(247, 58, 58);
 }
 
-@media(max-width: 600px) {
-    .career button[type=submit]::after {
-        display: none;
-    }
 
-    #playBtn {
-        top: 30%;
-        left: 35%;
-        width: 100px;
-    }
-}
 
 .contact {
     background-color: #E40737;
@@ -363,4 +353,20 @@ video {
 
 .gallery-image:hover::after{
     scale: 1;
+}
+
+
+@media(max-width: 600px) {
+    .career button[type=submit]::after {
+        display: none;
+    }
+
+    #playBtn {
+        top: 30%;
+        left: 35%;
+        width: 100px;
+    }
+    .gallery-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
 }
