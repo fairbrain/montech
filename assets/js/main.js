@@ -187,6 +187,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//     const galleryWrapper = document.querySelector('.gallery-wrapper');
+//     const totalImages = 30; // Total number of images
+//     const slides = 2;
+
+//     for (let i = 1; i <= slides; i++) {
+//         const gallerySlide = document.createElement('div');
+//     }
+
+//     for (let i = 1; i <= totalImages; i++) {
+//         const imgDiv = document.createElement('div');
+//         imgDiv.className = 'gallery-image';
+
+//         const imgElement = document.createElement('img');
+//         imgElement.src = `./assets/img/montech-gallery/${i}.webp`;
+//         imgElement.alt = `gallery-image-${i}`;
+//         imgElement.style.width = '100%';
+//         imgElement.style.height = '200px';
+//         imgElement.style.objectFit = 'cover';
+
+//         imgDiv.appendChild(imgElement);
+//         galleryWrapper.appendChild(imgDiv);
+//     }
+// });
+
+
 
 
 

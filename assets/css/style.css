@@ -287,7 +287,8 @@ video {
 
     #playBtn {
         top: 30%;
-        left: 30%;
+        left: 35%;
+        width: 100px;
     }
 }
 
@@ -316,4 +317,50 @@ video {
     font-size: 25px;
     border-radius: 50%;
     margin: 20px 5px;
+}
+
+.gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin:20px 0;
+}
+
+.gallery-image{
+    border: 2px solid greenyellow;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-image::after{
+    content: "+";
+    display: block;
+    color: white;
+    font-size: 45px;
+    background-color: #BCFB27;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    scale: 0;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: scale 0.5s;
+}
+
+.gallery-image img{
+    cursor: pointer;
+    object-position: center;
+    object-fit: cover;
+}
+
+.gallery-image:hover::after{
+    scale: 1;
 }
